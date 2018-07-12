@@ -50,14 +50,13 @@ def transfer(sender,reciever,amount):
         return 0
 
 
-# In[172]:
+
 
 Raj=User("Raj",100)
 Rahul=User("Rahul",50)
 Mohit=User("Mohit",15)
 
 
-# In[173]:
 
 transactions=[]
 transactions.append(transfer(Raj,Rahul,10))
@@ -66,36 +65,25 @@ transactions.append(transfer(Mohit,Rahul,5))
 transactions.append(transfer(Raj,Mohit,20))
 
 
-# In[174]:
-
 genesis_block=Block(0,"Genesis Block",0)
 blocks=[genesis_block]
 
 
-# In[175]:
 
 for i in range (len(transactions)):
     if(transactions[i]!=0):
         blocks.append(create_next_block(blocks[-1],transactions[i]))
 
 
-# In[176]:
-
 for i in range (len(blocks)):
     blocks[i].display()
 
 
-# In[177]:
-
-Raj.balance
+print(Raj.balance)
 
 
-# In[178]:
-
-Rahul.balance
+print(Rahul.balance)
 
 
-# In[179]:
-
-Mohit.balance
+print(Mohit.balance)
 
